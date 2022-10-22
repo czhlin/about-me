@@ -1,11 +1,11 @@
 # workflow name
 name: Release CI
 
-# master branch on push, auto run
+# main branch on push, auto run
 on: 
   push:
     branches:
-      - master
+      - main
       
 jobs:
   build: 
