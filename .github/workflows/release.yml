@@ -1,0 +1,31 @@
+# workflow name
+name: Release CI
+
+# master branch on push, auto run
+on: 
+  push:
+    branches:
+      - master
+      
+jobs:
+  build: 
+    runs-on: ubuntu-latest 
+        
+    steps:
+    # check it to your workflow can access it
+    # from: https://github.com/actions/checkout
+    - name: Checkout Repository master branch
+      uses: actions/checkout@master 
+      
+    # from: https://github.com/actions/setup-node  
+    - name: Setup Node.js 16.x 
+      uses: actions/setup-node@master
+      with:
+        node-version: "16.x"
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
+        BUILD_SCRIPT: npm install && npm run build
