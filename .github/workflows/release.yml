@@ -22,10 +22,12 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: "16.x"
+    - name: Setup about-me Dependencies
+      run: |
+        npm install
+        npm run build
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
+        token: ${{ secrets.ACCESS_TOKEN }}
