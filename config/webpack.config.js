@@ -9,7 +9,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CopyPlugin = require('copy-webpack-plugin');
 const build = require('./build');
 const serve = require('./serve');
 
@@ -36,8 +36,17 @@ const config = {
     new webpack.EnvironmentPlugin({
       // PUBLIC_PATH: path.resolve(__dirname, 'public/')
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../public/'),
+          to: path.resolve(__dirname, '../dist'),
+          force: true,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html'),
+      template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html',
       title: 'GP7',
       inject: 'body',
