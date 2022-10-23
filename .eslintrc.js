@@ -45,7 +45,7 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
   ],
-  plugins: ['jsx-a11y', 'react', 'react-hooks'],
+  plugins: ['jsx-a11y', 'react', 'react-hooks', 'html'],
   // 用于配置eslint解析选项
   parserOptions: {
     ecmaVersion: 6,

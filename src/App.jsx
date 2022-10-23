@@ -1,8 +1,11 @@
 import React from 'react';
+import Home from './views/home';
 
 const App = function () {
   return (
-    <h1>hello world</h1>
+    <div className="app">
+      <Home />
+    </div>
   );
 };
 
