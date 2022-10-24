@@ -5,7 +5,7 @@ const linkToHomeClick = (ev) => {
   const parentEl = window.parent || window;
   const pPath = parentEl.origin;
   const path = window.origin;
-  parentEl.location.href = pPath === path ? 'www.czhlin.top' : pPath;
+  parentEl.location.href = pPath === path ? 'https://www.czhlin.top' : pPath;
   ev.preventDefault();
   ev.stopPropagation();
 };
