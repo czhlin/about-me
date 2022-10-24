@@ -1,6 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
+const linkToHomeClick = (ev) => {
+  const parentEl = window.parent || window;
+  const path = parentEl.origin;
+  parentEl.location.href = path;
+  ev.preventDefault();
+  ev.stopPropagation();
+};
 function Home () {
   return (
     <div className="about-home">
@@ -17,7 +24,7 @@ function Home () {
               如今的我，不再幻想飞到天上，想的是如何赚更多的钱，让家人更加快乐，可是却逐渐迷失了前进的方向……
             </p>
             <p>
-              <a href="//www.czhlin.top" className='btn'>
+              <a href="" className='btn' onClick={linkToHomeClick}>
                 <strong>了解更多</strong>
                 -
                 <em>czhlin</em>
@@ -39,7 +46,7 @@ function Home () {
               为了更好地学习技术，我开始搭建自己的网站，写下一篇篇的博客……
             </p>
             <p>
-              <a href="//www.czhlin.top" className='btn'>
+              <a href="" className='btn' onClick={linkToHomeClick}>
                 <strong>了解更多</strong>
                 -
                 <em>czhlin</em>
