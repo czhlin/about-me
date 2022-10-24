@@ -2,10 +2,12 @@
 import React from 'react';
 
 const linkToHomeClick = (ev) => {
-  const parentEl = window.parent || window;
-  const pPath = parentEl.origin;
-  const path = window.origin;
-  parentEl.location.href = pPath === path ? 'https://www.czhlin.top' : pPath;
+
+  if (window.parent !== window) {
+    window.parent.postMessage({ back: true }, '*');
+  } else {
+    window.location.href = 'https://blog.czhlin.top';
+  }
   ev.preventDefault();
   ev.stopPropagation();
 };
