@@ -18,6 +18,10 @@
         background-position: center;
         background-attachment: fixed;
         user-select: none;
+        &.name {
+            color: #fccc;
+            background-image: url(~@/assets/about-name.jpg);
+        }
     }
     &>.about-content {
         height: 100vh;
@@ -28,6 +32,22 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        &.name {
+            background-image: url(~@/assets/about-content-name.jpg);
+            color: black;
+            .content-body {
+                transform: none;
+                background: rgba($color: white, $alpha: 0.4);
+            }
+            .text-box  {
+                text-align: center;
+                transform: none;
+                margin: 0;
+            }
+            p {
+                text-align: left;
+            }
+        }
         &>.content-body {
             position: absolute;
             width: 100%;
@@ -79,7 +99,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 8vw;
+        font-size: 4vw;
         background-color: #c0b5aa;
+        &.name {
+            color: #c0b5aa;
+            background-color: rgba(255,255,255,.8);
+        }
     }
 }

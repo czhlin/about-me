@@ -48,7 +48,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html',
-      title: 'GP7',
+      title: 'about me',
       inject: 'body',
       favicon: path.resolve(__dirname, '../public/favicon.ico'),
     }),
